@@ -7,5 +7,6 @@ data class Message(
     val id: Int,
     val nombreUsuario: String,
     var textoMensaje: String,
-    var mensajeLeido: Boolean = false
+    var mensajeLeido: Boolean = false,
+    val fechaMensaje: Long
 )

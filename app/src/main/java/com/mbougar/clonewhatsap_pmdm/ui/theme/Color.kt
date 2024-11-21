@@ -12,3 +12,7 @@ val Pink40 = Color(0xFF7D5260)
 
 val spacerColor = Color(0xFF1a1f23)
 val blackBackground = Color(0xFF0b1014)
+
+val messageGreen = Color(0xFF144D37)
+val messageBlack = Color(0xFF1D2429)
+val readMessageColor = Color(0xFF42b4d9)

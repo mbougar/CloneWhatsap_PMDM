@@ -9,6 +9,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
@@ -33,25 +34,37 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+private val DarkColorPalette = darkColorScheme(
+    primary = Color(0xFF128C7E),
+    onPrimary = Color.White,
+    primaryContainer = Color(0xFF262D31),
+    onPrimaryContainer = Color.White,
+    background = Color(0xFF121212),
+    onBackground = Color.White
+)
+
+private val LightColorPalette = lightColorScheme(
+    primary = Color(0xFF128C7E),
+    onPrimary = Color.White,
+    primaryContainer = Color(0xFF262D31),
+    onPrimaryContainer = Color.White,
+    background = Color(0xFFFFFFFF),
+    onBackground = Color.Black
+)
+
 @Composable
-fun CloneWhatsap_PMDMTheme(
+fun WhatsAppCloneTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+    val colors = if (darkTheme) {
+        DarkColorPalette
+    } else {
+        LightColorPalette
     }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = colors,
         typography = Typography,
         content = content
     )
