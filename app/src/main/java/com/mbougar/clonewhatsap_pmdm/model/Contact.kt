@@ -7,6 +7,5 @@ data class Contact(
     val nombre: String,
     val imageRes: Int,
     var ultimoMensaje: String,
-    var fechaUltimoMensaje: Long,
-//    var messages: List<Message>
+    var fechaUltimoMensaje: Long
 )
